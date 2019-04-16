@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		h1{
+			padding-left: 200px;
+			}
+		td{
+			border-bottom: 1px solid black;
+			padding: 5px 10px;
+		}
+		a{
+			text-decoration: none;
+			margin-left: 90px;
+		}
+		select{
+			margin-left: 10px;
+		}
+		span{
+			margin-left: 155px;
+			cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript" src="../jquery-1.12.4.js"></script>
+	<script>
+		var sj1 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj2 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj3 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj4 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj5 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj6 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj7 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj8 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj9 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sj10 = {
+			dh:"20160728001",
+			time:"2016-07-28",
+			gys:"联想株洲总代理",
+			gysdz:"株洲天元区黄山路"
+		};
+		var sz = [sj1,sj2,sj3,sj4,sj5,sj6,sj7,sj8,sj9,sj10,]
+			var index = 3;
+		$(function(){	
+			xs();
+			gb();		
+			qx();	
+		});
+		function qx(){
+			$("#qx").click(function(){
+				var t = this.checked;
+			$("[type = 'checkbox']").each(function(){
+				if(t){
+					this.checked = true;
+					$("#tb tr").css("background","#ff0")
+				}else{
+					this.checked = false;
+					$("#tb tr").css("background","white")
+					}
+				});
+			});
+		}
+		function gb(){
+			$("select").click(function(){
+				var s = $("select").val();
+				index = s;
+				$("#tb").html("");		
+				xs();
+			})
+		}
+		function xs(){
+			$(sz).each(function(i,obj){	
+				if(i<index){
+				var tr = $("<tr>");
+				var td1 = $("<td>").html(obj.dh);
+				var td2 = $("<td>").html(obj.time);
+				var td3 = $("<td>").html(obj.gys);
+				var td4= $("<td>").html(obj.gysdz);
+				var td5 = $("<td>").html("<input type='checkbox'/>");
+				td5.click(function(){
+					var t = this.checked;
+					if(t=true){
+						$(this).parent().css("background","#ff0")								
+					}else{
+						$(this).parent().css("background","white")		
+					}
+				});
+				tr.append(td1).append(td2).append(td3).append(td4).append(td5)
+				$("#tb").append(tr);
+				}			
+			});	
+		}
+	</script>
+	<body>
+		<h1>订单列表</h1>
+		<table cellspacing="0" cellpadding="0">
+			<tr>
+			<th>单号</th>
+			<th>单据日期</th>
+			<th>供应商</th>
+			<th>供应商地址</th>
+			<th><input type="checkbox" id="qx"/></th>
+			</tr>
+			<tbody id="tb">	
+			</tbody>
+		</table>
+		<div>
+			<a>首页 上一页 1 2 3 下一页 尾页
+			<select>
+			<option>3</option>	
+			<option>5</option>	
+			<option>10</option>	
+			</select>	
+			<span>删除</span>
+			</a>
+		</div>
+	</body>
+</html>	
